@@ -1,11 +1,213 @@
 <resources>
-
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionModeOverlay">true</item>
+    </style>
+
+    <!-- Toolbar theme. -->
+    <style name="ToolBarStyle" parent="Theme.AppCompat">
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:textColorSecondary">@android:color/white</item>
+        <item name="actionMenuTextColor">@android:color/white</item>
+        <item name="android:popupMenuStyle">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="Theme.AppCompat.Light.NoActionBar.FullScreen" parent="@style/AppTheme.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <!--Rating bar theme style to golen and light grey-->
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/gray</item>
+        <item name="colorControlActivated">@color/dusk_yellow</item>
+    </style>
+
+    <!--Alert Dialog theme. -->
+    <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowCloseOnTouchOutside">false</item>
+        <item name="android:windowBackground">@color/transparent</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <!--<style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />-->
+
+    <!-- tab layout -->
+
+    <!-- global textview style -->
+
+    <style name="TextStyle">
+        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:layout_marginBottom">2dp</item>
+        <item name="android:layout_marginLeft">2dp</item>
+        <item name="android:layout_marginRight">2dp</item>
+        <item name="android:textColor">@color/black_effective</item>
+    </style>
+
+    <!-- Temporary 14sp -->
+    <style name="TextStyle.Title.Sub" parent="TextStyle">
+        <item name="android:textAppearance">@style/TextAppearance.Text.Regular</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/open_sans</item>
+    </style>
+    <!--13sp-->
+    <style name="TextStyle.Data" parent="TextStyle">
+        <item name="android:textAppearance">@style/TextAppearance.Text.Light</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="TextStyle.Heading" parent="TextStyle">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textAppearance">@style/TextAppearance.Text.Bold</item>
+    </style>
+
+    <style name="TextStyle.Detail.Heading" parent="TextStyle">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textAppearance">@style/TextAppearance.Text.Bold</item>
+    </style>
+    <!--
+        <style name="TextAppearance.Text.Regular" parent="android:TextAppearance">
+            <item name="android:fontFamily">@font/source_sans_regular</item>
+        </style>
+
+        <style name="TextAppearance.Text.Bold" parent="android:TextAppearance">
+            <item name="android:fontFamily">@font/source_sans_semibold</item>
+        </style>-->
+
+
+    <style name="TextAppearance.Text.Regular" parent="android:TextAppearance">
+        <item name="android:fontFamily">@font/open_sans</item>
+    </style>
+
+    <style name="TextAppearance.Text.Bold" parent="android:TextAppearance">
+        <item name="android:fontFamily">@font/open_sans_semibold</item>
+    </style>
+
+    <style name="TextAppearance.Text.Light" parent="android:TextAppearance">
+        <item name="android:fontFamily">@font/open_sans_light</item>
+    </style>
+
+
+    <style name="Toolbar.Header" parent="TextStyle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAppearance">?android:textAppearanceMedium</item>
+        <item name="android:fontFamily">@font/open_sans_semibold</item>
+    </style>
+
+    <style name="Toolbar.Secondary" parent="TextStyle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAppearance">?android:textAppearanceSmall</item>
+        <item name="android:fontFamily">@font/open_sans</item>
+    </style>
+
+    <style name="Toolbar.Small" parent="TextStyle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:fontFamily">@font/open_sans</item>
+    </style>
+
+
+    <style name="TextStyle.HeadersMed" parent="TextStyle">
+        <item name="android:textColor">@color/primary_text_color</item>
+        <item name="android:textAppearance">?android:textAppearanceMedium</item>
+        <item name="android:fontFamily">@font/open_sans_semibold</item>
+    </style>
+
+    <style name="TextStyle.HeadersSmall" parent="TextStyle">
+        <item name="android:textColor">@color/primary_text_color</item>
+        <item name="android:textAppearance">?android:textAppearanceSmall</item>
+        <item name="android:fontFamily">@font/open_sans_semibold</item>
+    </style>
+
+    <style name="TextStyle.Detail.Headers" parent="TextStyle">
+        <item name="android:textColor">@color/primary_text_color</item>
+        <item name="android:textAppearance">?android:textAppearanceMedium</item>
+        <item name="android:fontFamily">@font/open_sans</item>
+    </style>
+
+    <style name="TextStyle.Detail.HeadersSmall" parent="TextStyle">
+        <item name="android:textColor">@color/primary_text_color</item>
+        <item name="android:textAppearance">?android:textAppearanceSmall</item>
+        <item name="android:fontFamily">@font/open_sans_semibold</item>
+    </style>
+
+    <!--For Desc Styles-->
+    <style name="TextStyle.DescMed" parent="TextStyle">
+        <item name="android:textColor">@color/secondary_text_color</item>
+        <item name="android:textAppearance">?android:textAppearanceMedium</item>
+        <item name="android:fontFamily">@font/source_sans_regular</item>
+    </style>
+
+    <style name="TextStyle.DescSmall" parent="TextStyle">
+        <item name="android:textColor">@color/secondary_text_color</item>
+        <item name="android:textAppearance">?android:textAppearanceSmall</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/open_sans</item>
+    </style>
+
+    <style name="TextStyle.DescSmallD" parent="TextStyle">
+        <item name="android:textColor">@color/secondary_text_color</item>
+        <item name="android:textAppearance">?android:textAppearanceSmall</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:fontFamily">@font/open_sans</item>
+    </style>
+
+    <!--For Link Styles-->
+
+    <style name="TextStyle.LinkSmall" parent="TextStyle">
+        <item name="android:textColor">@color/link</item>
+        <item name="android:textAppearance">?android:textAppearanceSmall</item>
+        <item name="android:fontFamily">@font/open_sans</item>
+    </style>
+
+    <!--For dates Styles-->
+
+    <style name="TextStyle.DatesSmall" parent="TextStyle">
+        <item name="android:textColor">@color/dates</item>
+        <item name="android:textAppearance">?android:textAppearanceSmall</item>
+        <item name="android:fontFamily">@font/open_sans</item>
+    </style>
+
+
+    <style name="amu_Bubble.TextAppearance.Light" parent="amu_Bubble.TextAppearance.Dark">
+        <item name="android:textColor">#ffeeeeee</item>
+    </style>
+
+
+    <style name="amu_Bubble.TextAppearance.Dark" parent="android:TextAppearance.Medium">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#ff7f7f7f</item>`
+    </style>
+
+
+    <style name="DetailCardview">
+        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:layout_marginBottom">2dp</item>
+        <item name="android:background">@color/white</item>
+    </style>
+    <!--OTP View-->
+
+    <style name="PinWidget.PinView" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@null</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:maxLines">1</item>
+    </style>
 </resources>

@@ -1,6 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    #0077B5
+    <color name="colorPrimary">#018BC9</color>
+    <color name="colorPrimaryDark">#0078B5</color>
+    <color name="primary_light">#B3E5FC</color>
+    <color name="colorAccent">#0078B5</color>
+    <color name="textColorPrimary">#212121</color>
+    <color name="textColorSecondary">#757575</color>
+
+    <!--    <color name="colorPrimary">#B11414</color>
+        <color name="colorPrimaryDark">#a11313</color>
+        <color name="colorAccent">#B11414</color>
+        <color name="textColorPrimary">#3f4546</color>
+        <color name="textColorSecondary">#99a1a2</color>-->
+
+    <color name="light_gray">#dbdbdb</color>
+    <color name="gray">#7e7e7e</color>
+    <color name="dark_gray">#696969</color>
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="black_effective">#2a2a2a</color>
+    <color name="transparent">#00000000</color>
+    <color name="ripple_effect">#22000000</color>
+    <color name="main_background">#f2f3f5</color>
+    <color name="dusk_yellow">#F8D305</color>
+    <color name="green">#1cc909</color>
+    <color name="desc">#3d515a</color>
+    <color name="link">#185be2</color>
+    <color name="dates">#65747c</color>
+    <color name="active_link_color">#F5434B</color>
+    <color name="ghost_white">#F8F8F9</color>
+    <color name="drawer_background">#315e77</color>
+
+    <!--Design colors-->
+    <color name="primary_text_color">#434c5c</color>
+    <color name="secondary_text_color">#686f80</color>
+
+    <color name="red_dark">#F06423</color>
+    <color name="orange">#FFA500</color>
+    <color name="circle_image_background">#DEE0E5</color>
+
+    <color name="colorPrimaryLight">#b4b4b4</color>
+
+
+    <color name="black_transparent_70percent">#B3000000</color>
+
+    <color name="line_light_grey">#d7a7a7a7</color>
+
+    <color name="divider">#BDBDBD</color>
+
+    <!-- Review color-->
+
+
+    <color name="miles">#F34C5D</color>
 </resources>

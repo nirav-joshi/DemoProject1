@@ -17,6 +17,10 @@ package demosample.nirav.com.demoproject.di.component;
 
 
 import dagger.Component;
+import demosample.nirav.com.demoproject.Home.HomeFragment;
+import demosample.nirav.com.demoproject.MainActivity;
+import demosample.nirav.com.demoproject.Order.OrderFragment;
+import demosample.nirav.com.demoproject.Profile.AccountFragment;
 import demosample.nirav.com.demoproject.di.PerActivity;
 import demosample.nirav.com.demoproject.di.module.ActivityModule;
 
@@ -24,6 +28,11 @@ import demosample.nirav.com.demoproject.di.module.ActivityModule;
 @PerActivity
 @Component(dependencies = ApplicationComponent.class, modules = ActivityModule.class)
 public interface ActivityComponent {
+
+    void inject(MainActivity activity);
+    void inject(HomeFragment activity);
+    void inject(AccountFragment activity);
+    void inject(OrderFragment activity);
 
 
 }

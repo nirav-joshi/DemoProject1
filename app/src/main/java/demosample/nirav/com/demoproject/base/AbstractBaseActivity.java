@@ -40,6 +40,7 @@ import demosample.nirav.com.demoproject.di.component.ActivityComponent;
 import demosample.nirav.com.demoproject.di.component.DaggerActivityComponent;
 import demosample.nirav.com.demoproject.di.module.ActivityModule;
 
+
 /**
  * @author Filippo Engidashet <filippo.eng@gmail.com>
  * @version 1.0.0
