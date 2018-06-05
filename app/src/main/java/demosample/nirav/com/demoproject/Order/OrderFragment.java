@@ -16,8 +16,6 @@ public class OrderFragment extends AbstractBaseFragment {
     @Inject
     DataManager dataManager;
 
-
-
     public static OrderFragment newInstance() {
         return new OrderFragment();
     }

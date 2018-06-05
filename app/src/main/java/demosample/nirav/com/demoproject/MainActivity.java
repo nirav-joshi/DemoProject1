@@ -27,9 +27,12 @@ public class MainActivity extends AbstractBaseActivity {
     private TextView mTextMessage;
     @BindView(R.id.bottom_navigation)
     BottomNavigationView bottomNavigationView;
+
     @BindView(R.id.toolbar)
     Toolbar toolbar;
     private Fragment curFragment;
+    private static final int TIME_INTERVAL = 1000;
+    private long mBackPressed;
 
     @Override
     protected int getContentView() {
@@ -141,6 +144,28 @@ public class MainActivity extends AbstractBaseActivity {
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         curFragment = getSupportFragmentManager().findFragmentById(R.id.frame_container);
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        if (mBackPressed + TIME_INTERVAL > System.currentTimeMillis() && getSupportFragmentManager().getBackStackEntryCount() == 1) {
+            finish();
+
+        } else if (getSupportFragmentManager().getBackStackEntryCount() == 1) {
+            showToast("Double Tap Back to Exit.");
+            mBackPressed = System.currentTimeMillis();
+        } else {
+            super.onBackPressed();
+            Fragment selectedFragment = getSupportFragmentManager().findFragmentById(R.id.frame_container);
+            if (selectedFragment instanceof HomeFragment) {
+                updateNavigationBarState(R.id.navigation_home);
+            } else if (selectedFragment instanceof OrderFragment) {
+                updateNavigationBarState(R.id.navigation_order);
+            } else if (selectedFragment instanceof AccountFragment) {
+                updateNavigationBarState(R.id.navigation_account);
+            }
+        }
     }
 
 

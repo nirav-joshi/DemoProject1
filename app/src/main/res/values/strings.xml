@@ -4,4 +4,6 @@
     <string name="title_home">Home</string>
     <string name="title_order">Order</string>
     <string name="title_account">Account</string>
+    <string name="location">Your Location</string>
+    <string name="ahmedabad">Ahmedabad</string>
 </resources>
