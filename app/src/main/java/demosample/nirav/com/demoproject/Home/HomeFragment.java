@@ -1,16 +1,23 @@
 package demosample.nirav.com.demoproject.Home;
 
 import android.os.Bundle;
-import android.view.View;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import javax.inject.Inject;
 
+import butterknife.BindView;
 import demosample.nirav.com.demoproject.R;
 import demosample.nirav.com.demoproject.base.AbstractBaseFragment;
 import demosample.nirav.com.demoproject.data.DataManager;
 import demosample.nirav.com.demoproject.di.component.ActivityComponent;
-import demosample.nirav.com.demoproject.utils.ToolbarUtil;
 
 
 public class HomeFragment extends AbstractBaseFragment {
@@ -18,6 +25,17 @@ public class HomeFragment extends AbstractBaseFragment {
 
     @Inject
     DataManager dataManager;
+    @BindView(R.id.pager)
+    ViewPager mImageViewPager;
+
+    @BindView(R.id.tabDots)
+    TabLayout tabLayout;
+    @BindView(R.id.tv_location)
+    TextView tvLocation;
+    @BindView(R.id.lblLocation)
+    TextView lblLocation;
+    private Timer timer;
+    private int currentPage = -1;
 
 
     public static HomeFragment newInstance() {
@@ -37,11 +55,38 @@ public class HomeFragment extends AbstractBaseFragment {
             component.inject(this);
         }
 
-        View toolbarView = ToolbarUtil.addRemoveViewFromToolbar(getActivity(), R.layout.toolbar_temple_list);
-        if (toolbarView != null) {
-            TextView lblLocation = toolbarView.findViewById(R.id.tv_location);
-            lblLocation.setText("Ahmedabad");
-        }
+        lblLocation.setText("Your Location");
+        tvLocation.setText("Ahmedabad");
+        List<String> imgUrls = new ArrayList<>();
+        imgUrls.add("47c72eef-22bc-45c0-8e58-2ba3b9b75fd0.png");
+        imgUrls.add("47382cd4-693d-4422-8f49-e09d903b8187.jpg");
+        imgUrls.add("40f77796-548d-4c11-9aa9-639eb021e77d.jpg");
+        PagerAdapter adapter = new HomeSlidingImageAdapter(getActivity(), imgUrls);
+
+
+
+
+        mImageViewPager.setAdapter(adapter);
+        tabLayout.setupWithViewPager(mImageViewPager, true);
+
+
+        TimerTask timerTask = new TimerTask() {
+            @Override
+            public void run() {
+                mImageViewPager.post(new Runnable(){
+
+                    @Override
+                    public void run() {
+                        mImageViewPager.setCurrentItem(++currentPage,true);
+                        if (currentPage == imgUrls.size() -1) {
+                            currentPage = -1;
+                        }
+                    }
+                });
+            }
+        };
+        timer = new Timer();
+        timer.schedule(timerTask, 3000, 3000);
     }
 
 }

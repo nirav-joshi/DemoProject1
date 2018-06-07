@@ -9,7 +9,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -28,8 +27,6 @@ public class MainActivity extends AbstractBaseActivity {
     @BindView(R.id.bottom_navigation)
     BottomNavigationView bottomNavigationView;
 
-    @BindView(R.id.toolbar)
-    Toolbar toolbar;
     private Fragment curFragment;
     private static final int TIME_INTERVAL = 1000;
     private long mBackPressed;
@@ -48,7 +45,6 @@ public class MainActivity extends AbstractBaseActivity {
             component.inject(this);
         }
 
-        setSupportActionBar(toolbar);
         replaceFragment(itemClick(R.id.navigation_home));
         bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
             replaceFragment(itemClick(item.getItemId()));
