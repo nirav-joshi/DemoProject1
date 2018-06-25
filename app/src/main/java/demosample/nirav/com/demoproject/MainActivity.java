@@ -33,7 +33,7 @@ public class MainActivity extends AbstractBaseActivity {
 
     @Override
     protected int getContentView() {
-        return R.layout.activity_main;
+        return R.layout.activity_main2;
     }
 
     @Override
@@ -44,6 +44,7 @@ public class MainActivity extends AbstractBaseActivity {
         if (component != null) {
             component.inject(this);
         }
+
 
         replaceFragment(itemClick(R.id.navigation_home));
         bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
