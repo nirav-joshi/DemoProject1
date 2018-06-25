@@ -125,7 +125,7 @@ public final class RetrofitSingletonNew {
     private Retrofit provideRetrofit() {
         return new Retrofit.Builder()
                 //.baseUrl("https://api.myjson.com/bins/")
-                .baseUrl("192.168.1.171")
+                .baseUrl("http://192.168.1.5/")
                 //.baseUrl("https://api.myjson.com/bins/")
                 .addConverterFactory(provideGsonConverterFactory())
                 .addCallAdapterFactory(provideRxJavaCallAdapterFactory())

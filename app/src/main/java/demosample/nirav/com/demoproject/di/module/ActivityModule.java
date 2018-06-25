@@ -22,6 +22,9 @@ import android.support.v7.widget.LinearLayoutManager;
 import com.google.gson.Gson;
 import dagger.Module;
 import dagger.Provides;
+import demosample.nirav.com.demoproject.Home.HomePresenter;
+import demosample.nirav.com.demoproject.Home.IHomePresenter;
+import demosample.nirav.com.demoproject.Home.IHomeView;
 import demosample.nirav.com.demoproject.di.ActivityContext;
 import io.reactivex.disposables.CompositeDisposable;
 
@@ -62,6 +65,10 @@ public class ActivityModule {
         return new LinearLayoutManager(activity);
     }
 
-
+    @Provides
+    IHomePresenter<IHomeView> providesHomePresenter
+            (HomePresenter<IHomeView> presenter) {
+        return presenter;
+    }
 
 }

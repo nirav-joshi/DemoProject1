@@ -1,5 +1,6 @@
 package demosample.nirav.com.demoproject.Home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.PagerAdapter;
@@ -16,15 +17,18 @@ import java.util.TimerTask;
 import javax.inject.Inject;
 
 import butterknife.BindView;
+import butterknife.OnClick;
+import demosample.nirav.com.demoproject.Order.SchedulePickupActivity;
 import demosample.nirav.com.demoproject.R;
 import demosample.nirav.com.demoproject.base.AbstractBaseFragment;
 import demosample.nirav.com.demoproject.data.DataManager;
 import demosample.nirav.com.demoproject.di.component.ActivityComponent;
 
 
-public class HomeFragment extends AbstractBaseFragment {
-
-
+public class HomeFragment extends AbstractBaseFragment implements IHomeView{
+    @Inject
+    IHomePresenter<IHomeView> mPresenter;
+    private ServicesAdapter servicesAdapter;
     @Inject
     DataManager dataManager;
     @BindView(R.id.pager)
@@ -50,6 +54,11 @@ public class HomeFragment extends AbstractBaseFragment {
         return R.layout.home;
     }
 
+
+    @OnClick(R.id.btnBook)
+    void onbookclick(){
+        startActivity(new Intent(getActivity(), SchedulePickupActivity.class));
+    }
     @Override
     protected void onViewReady(Bundle savedInstanceState) {
         super.onViewReady(savedInstanceState);
@@ -57,7 +66,7 @@ public class HomeFragment extends AbstractBaseFragment {
         if (component != null) {
             component.inject(this);
         }
-
+        mPresenter.onAttach(this);
         lblLocation.setText("Your Location");
         tvLocation.setText("Ahmedabad");
         List<String> imgUrls = new ArrayList<>();
@@ -73,21 +82,21 @@ public class HomeFragment extends AbstractBaseFragment {
         //rvData.addItemDecoration(new ItemDecorationAlbumColumns(getResources()
         // .getDimensionPixelSize(R.dimen.divider_size), getResources().getInteger(R.integer.grid_size)));
         rvData.setLayoutManager(new GridLayoutManager(getContext(), 3));
-        ServicesAdapter servicesAdapter = new ServicesAdapter(getActivity(), imgUrls);
+         servicesAdapter = new ServicesAdapter(getActivity());
         rvData.setAdapter(servicesAdapter);
         mImageViewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(mImageViewPager, true);
-
+        mPresenter.getServices();
 
         TimerTask timerTask = new TimerTask() {
             @Override
             public void run() {
-                mImageViewPager.post(new Runnable(){
+                mImageViewPager.post(new Runnable() {
 
                     @Override
                     public void run() {
-                        mImageViewPager.setCurrentItem(++currentPage,true);
-                        if (currentPage == imgUrls.size() -1) {
+                        mImageViewPager.setCurrentItem(++currentPage, true);
+                        if (currentPage == imgUrls.size() - 1) {
                             currentPage = -1;
                         }
                     }
@@ -98,4 +107,9 @@ public class HomeFragment extends AbstractBaseFragment {
         timer.schedule(timerTask, 3000, 3000);
     }
 
+    @Override
+    public void getServices(List<ServiceCateogryDTO> cateogryDTOS) {
+        if(cateogryDTOS!=null && cateogryDTOS.size()>0)
+            servicesAdapter.addAll(cateogryDTOS);
+    }
 }

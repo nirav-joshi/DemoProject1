@@ -16,10 +16,7 @@ import java.util.List;
 
 import demosample.nirav.com.demoproject.R;
 
-/**
- * Created by Mitesh on 2/22/2018
- * .
- */
+
 
 public class HomeSlidingImageAdapter extends PagerAdapter {
     private ArrayList<String> IMAGES;
