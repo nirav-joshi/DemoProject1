@@ -23,6 +23,8 @@ import demosample.nirav.com.demoproject.Order.OrderFragment;
 import demosample.nirav.com.demoproject.Profile.AccountFragment;
 import demosample.nirav.com.demoproject.di.PerActivity;
 import demosample.nirav.com.demoproject.di.module.ActivityModule;
+import demosample.nirav.com.demoproject.login.LoginActivity;
+import demosample.nirav.com.demoproject.login.OtpActivity;
 
 
 @PerActivity
@@ -33,6 +35,8 @@ public interface ActivityComponent {
     void inject(HomeFragment activity);
     void inject(AccountFragment activity);
     void inject(OrderFragment activity);
+    void inject(LoginActivity activity);
+    void inject(OtpActivity activity);
 
 
 }

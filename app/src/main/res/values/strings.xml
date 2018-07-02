@@ -6,4 +6,10 @@
     <string name="title_account">Account</string>
     <string name="location">Your Location</string>
     <string name="ahmedabad">Ahmedabad</string>
+    <string name="enter_phonetext">Enter your Phone number below to signup .</string>
+    <string name="mobile">Mobile Number</string>
+    <string name="proceed">Proceed</string>
+    <string name="instrunctionopt">We have sent an OTP code to your Mobile for Verification</string>
+    <string name="verify">Verify</string>
+    <string name="resend">Resend</string>
 </resources>
