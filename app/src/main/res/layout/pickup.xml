@@ -433,6 +433,9 @@
             android:text="4 PM-6 PM"
             android:textSize="12sp" />
 
+
+        <include layout="@layout/date_picker_layout"/>
+
     </LinearLayout>
 
     <Button

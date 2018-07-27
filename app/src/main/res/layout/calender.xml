@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginBottom="15dp"
+    android:background="#00000000">
+    <LinearLayout
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/ll1"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:orientation="vertical"
+        android:paddingRight="10dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:paddingLeft="10dp"
+        android:background="@drawable/rect2">
+    <e.wolfsoft1.tickets.customfonts.MyTextView_Roboto_Medium
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/month"
+        android:text="M"
+        android:textSize="11dp"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#c9c9c9"/>
+    <e.wolfsoft1.tickets.customfonts.MyTextView_Roboto_Bold
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/date"
+        android:text="23"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:textColor="#5b7196"
+        android:layout_marginTop="3dp"/>
+    </LinearLayout>
+
+
+
+</LinearLayout>

@@ -124,6 +124,11 @@
         <item name="android:fontFamily">@font/open_sans</item>
     </style>
 
+    <style name="TextStyle.HeadersLarge" parent="TextStyle">
+        <item name="android:textColor">@color/primary_text_color</item>
+        <item name="android:textAppearance">?android:textAppearanceLarge</item>
+        <item name="android:fontFamily">@style/TextAppearance.Text.Bold</item>
+    </style>
 
     <style name="TextStyle.HeadersMed" parent="TextStyle">
         <item name="android:textColor">@color/primary_text_color</item>
